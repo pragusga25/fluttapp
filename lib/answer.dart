@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
   final VoidCallback selectHandler;
-  Answer(this.selectHandler);
+  final String answer;
+
+  Answer(this.selectHandler, this.answer);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class Answer extends StatelessWidget {
         color: Color(0xAAFF2211),
         hoverColor: Colors.red,
         child: Text(
-          'Answer 1',
+          this.answer,
         ),
         onPressed: this.selectHandler,
       ),

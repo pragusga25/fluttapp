@@ -17,14 +17,14 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var qustions = [
+    var questions = [
       {
         'question': 'What is the capital of France?',
         'answers': ['Paris', 'London', 'Berlin']
       },
       {
         'question': 'What is the capital of Germany?',
-        'answers': ['Berlin', 'Munich', 'Hamburg']
+        'answers': ['Berlin', 'Munich', 'Hamburg', 'Cologne']
       },
       {
         'question': 'What is the capital of Italy?',
@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
       },
       {
         'question': 'What is the capital of Spain?',
-        'answers': ['Madrid', 'Barcelona', 'Valencia']
+        'answers': ['Madrid', 'Barcelona', 'Valencia', 'Seville']
       },
     ];
 
@@ -44,11 +44,12 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: <Widget>[
             Question(
-              qustions[_qustionIndex],
+              questions[_qustionIndex]['question'] as String,
             ),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
+            ...(questions[_qustionIndex]['answers'] as List<String>)
+                .map((answer) {
+              return Answer(_answerQuestion, answer);
+            }).toList(),
           ],
         ),
       ),
