@@ -5,12 +5,12 @@ void main() => runApp(MyApp());
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
-  int index = 0;
+class _MyAppState extends State<MyApp> {
+  int _qustionIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +18,7 @@ class MyAppState extends State<MyApp> {
       'What is your name?',
       'What is your quest?',
       'What is the capital of Assyria?',
+      'What is the answer to life, the universe, and everything?',
     ];
 
     return MaterialApp(
@@ -27,26 +28,20 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Text(qustions[index]),
+            Text(qustions[_qustionIndex]),
             RaisedButton(
-              child: Text('Next qustions'),
-              onPressed: () {
-                setState(() {
-                  if (index < qustions.length - 1) index++;
-                });
-              },
-            ),
-            RaisedButton(
-              child: Text('Previous qustions'),
-              onPressed: () {
-                setState(() {
-                  if (index > 0) index--;
-                });
-              },
+              child: Text('Answer Question'),
+              onPressed: _answerQuestion,
             ),
           ],
         ),
       ),
     );
+  }
+
+  void _answerQuestion() {
+    setState(() {
+      if (_qustionIndex < 3) _qustionIndex++;
+    });
   }
 }
