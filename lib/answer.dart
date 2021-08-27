@@ -9,7 +9,7 @@ class Answer extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: RaisedButton(
-        color: Color(0xAAFF00EE),
+        color: Color(0xAAFF2211),
         hoverColor: Colors.red,
         child: Text(
           'Answer 1',

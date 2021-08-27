@@ -17,11 +17,23 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> qustions = [
-      'What is your name?',
-      'What is your quest?',
-      'What is the capital of Assyria?',
-      'What is the answer to life?',
+    var qustions = [
+      {
+        'question': 'What is the capital of France?',
+        'answers': ['Paris', 'London', 'Berlin']
+      },
+      {
+        'question': 'What is the capital of Germany?',
+        'answers': ['Berlin', 'Munich', 'Hamburg']
+      },
+      {
+        'question': 'What is the capital of Italy?',
+        'answers': ['Rome', 'Milan', 'Florence']
+      },
+      {
+        'question': 'What is the capital of Spain?',
+        'answers': ['Madrid', 'Barcelona', 'Valencia']
+      },
     ];
 
     return MaterialApp(
